@@ -16,6 +16,9 @@
     "es6": true,
     "browser": true
   },
+  "ignorePatterns": [
+    "source/out/**"
+  ],
   "extends": [
     "eslint:recommended"
   ],
