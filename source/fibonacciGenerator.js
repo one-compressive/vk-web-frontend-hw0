@@ -14,7 +14,6 @@
  *
  * @returns {object}
  */
-
 function* fibonacciGenerator(n) {
     if (n <= 0) return;
 
@@ -29,9 +28,4 @@ function* fibonacciGenerator(n) {
         yield first;
         [first, second] = [second, first + second];
     }
-}
-
-const gen = fibonacciGenerator(3);
-for(let value of gen) {
-  alert(value); // 1, затем 2, затем 3
 }
