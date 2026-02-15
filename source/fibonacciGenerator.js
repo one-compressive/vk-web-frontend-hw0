@@ -29,8 +29,3 @@ function* fibonacciGenerator(n) {
         [first, second] = [second, first + second];
     }
 }
-
-const gen = fibonacciGenerator(3);
-for(let value of gen) {
-  alert(value); // 1, затем 2, затем 3
-}
