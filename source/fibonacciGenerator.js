@@ -14,7 +14,6 @@
  *
  * @returns {object}
  */
-
 function* fibonacciGenerator(n) {
     if (n <= 0) return;
 
