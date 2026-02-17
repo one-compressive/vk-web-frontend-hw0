@@ -17,7 +17,7 @@
 function* fibonacciGenerator(n) {
     if (n <= 0) return;
 
-    if (n == 1) {
+    if (n === 1) {
         yield 0;
         return;
     }
