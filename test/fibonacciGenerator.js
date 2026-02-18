@@ -38,46 +38,44 @@ QUnit.module("Тестируем функцию fibonacciGenerator", function() 
     });
 
     QUnit.test("Работает правильно при передаче NaN", function(assert) {
-        const fibGen = fibonacciGenerator(NaN);
-
-        assert.deepEqual([...fibGen], [], "Генерация должна вернуть пустой массив.");
+        assert.throws(
+            () => fibonacciGenerator(NaN).next(),
+            Error
+        );
     });
 
     QUnit.test("Работает правильно при передаче пустой строки", function(assert) {
-        const fibGen = fibonacciGenerator("");
-
-        assert.deepEqual([...fibGen], [], "Генерация должна вернуть пустой массив.");
+        assert.throws(
+            () => fibonacciGenerator("").next(),
+            Error
+        );
     });
 
     QUnit.test("Работает правильно при передаче непустой строки, приводящейся к number", function(assert) {
-        assert.deepEqual(
-            [...fibonacciGenerator("7")],
-            [0, 1, 1, 2, 3, 5, 8],
-            "Должны быть сгенерированы первые 7 чисел."
+        assert.throws(
+            () => fibonacciGenerator("7").next(),
+            Error
         );
     });
 
     QUnit.test("Работает правильно при передаче непустой строки, не приводящейся к number", function(assert) {
-        assert.deepEqual(
-            [...fibonacciGenerator("?")],
-            [],
-            "Генерация должна вернуть пустой массив."
+        assert.throws(
+            () => fibonacciGenerator("&").next(),
+            Error
         );
     });
 
     QUnit.test("Работает правильно при передаче null", function(assert) {
-        assert.deepEqual(
-            [...fibonacciGenerator(null)],
-            [],
-            "Генерация должна вернуть пустой массив."
+        assert.throws(
+            () => fibonacciGenerator(null).next(),
+            Error
         );
     });
 
     QUnit.test("Работает правильно при передаче boolean", function(assert) {
-        assert.deepEqual(
-            [...fibonacciGenerator(true)],
-            [0],
-            "true приводится к 1, должен вернуться один элемент."
+        assert.throws(
+            () => fibonacciGenerator(true).next(),
+            Error
         );
     });
 });

@@ -15,6 +15,8 @@
  * @returns {object}
  */
 function* fibonacciGenerator(n) {
+    if (!Number.isInteger(n)) throw new Error("Invalid argument");
+
     if (n <= 0) return;
 
     if (n === 1) {
